@@ -1,18 +1,9 @@
 import requests
 from config.settings import NEWSDATA_API_KEY, NEWSDATA_API_URL
 
-def fetch_top_headlines(limit=5, country="ca", language="en", category="top"):
-    params = {
-        "apikey": NEWSDATA_API_KEY,
-        "country": "ca,us",
-        "language": "en",
-        "category": "top,technology",
-#        "page": page,
-    }
-#    response = requests.get(NEWSDATA_API_URL, params=params, timeout=10)
+def fetch_top_headlines(limit=5, country="ca,us", language="en", category="top,technology"):
     
-#    print(f"COUNTRY is: {params["country"]}")
-    url = NEWSDATA_API_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + params["country"] + "&language=" + params["language"] + "&category=" + params["category"]
+    url = NEWSDATA_API_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + country + "&language=" + language + "&category=" + category
     response = requests.get(url)
     response.raise_for_status()
     data = response.json()
@@ -23,9 +14,7 @@ if __name__ == "__main__":
     print(fetch_top_headlines())
 
 
-### DEBUGFS  from news.io
-#import requests
-
+### from news.io
 #url = "https://newsdata.io/api/1/latest?
 #  apikey=pub_8e4678a9d3ea477f8ec8c178030cd20c
 #  &country=ca,us
