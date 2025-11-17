@@ -1,0 +1,12 @@
+
+data/
+ipynb_checkpoints/
+backup/
+orig/
+venv/
+*.pyc
+*.h5
+*.keras
+*.ipynb
+output.txt
+about.txt
