@@ -1,10 +1,20 @@
+from langchain_core.runnables import Runnable
 import requests
 
-class OllamaAgent:
+class OllamaAgentRunnable(Runnable):
     def __init__(self, model="mistral:7b"):
         self.model = model
 
-    def generate(self, prompt):
+    def invoke(self, prompt, config=None):
+        if isinstance(prompt, dict) and "headlines" in prompt:
+            prompt = "\n".join(prompt["headlines"])
+        elif hasattr(prompt, "to_string"):
+            prompt = prompt.to_string()
+        elif hasattr(prompt, "value"):
+            prompt = prompt.value
+        else:
+            prompt = str(prompt)
+
         response = requests.post(
             "http://localhost:11434/api/generate",
             json={"model": self.model, "prompt": prompt, "stream": False}

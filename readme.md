@@ -1,4 +1,4 @@
-## News Summarizer Agent Using LangChain Framework (LangChain Learner Project)
+## News Summarizer Agent Using LangChain Framework 
 
 ## Overview
 
@@ -15,6 +15,7 @@
 - **prompts/summary_prompt.py:**: Contains prompt templates for summarization
 - **tools/news_scraper.py:**: Scripts for fetching news headlines from the NewsData.io API
 - **agents/summarize_agent.py:**: LangChain agent logic for summarizing headlines
+- **agents/llm/ollama_llm_agent.py:**: Use mistral:7b LLM model via Ollama
 - **langnews_agent_main.py:**: Run the full agent (CLI entry point)
 
 - **requirements.txt**: List of required packages and dependencies.

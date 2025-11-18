@@ -5,6 +5,7 @@ backup/
 orig/
 venv/
 *.pyc
+*.bk
 *.h5
 *.keras
 *.ipynb
