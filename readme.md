@@ -2,13 +2,13 @@
 
 ## Overview
 
-- This project demonstrates how to build a modular Python agent with the LangChain framework.
-- The agent fetches live news headlines using a free, open news API (NewsData.io), then summarizes the headlines into concise bullet points using an LLM.
-- The codebase demonstrates:
+This project demonstrates how to build a modular Python agent with the LangChain framework.  The agent fetches live news headlines using a free, open news API (NewsData.io), then summarizes the headlines into concise bullet points using a LLM (mistral:7b)
+The codebase demonstrates:
 - Chaining of LLM prompts (LangChain)
 - Basic web API data retrieval
 - Separation of configuration, tools, and agent logic
 - CLI for quick execution
+- Automatic selection of tools and makes all critical decisions until specified goal is met
 
 ## Structure
 - **config/settings.py:**: Centralized configuration (API endpoints and keys)
