@@ -7,6 +7,8 @@ def fetch_top_headlines(limit: int=50, country: str="ca,us", language: str="en",
     url = NEWSDATA_API_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + country + "&language=" + language + "&category=" + category
 
     print(f"Query URL is: {url}")
+    print("Called fetch_top_headlines()")
+    print(f"fetch_top_headlines limit is: {limit}")
     response = requests.get(url)
     response.raise_for_status()
     data = response.json()

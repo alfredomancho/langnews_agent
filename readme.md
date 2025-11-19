@@ -40,6 +40,11 @@ Get a NewsData.io API key (free registration).
     ```
 
 3. **Run Agent**  
+News summarizer using LangChain (linear code, no decision making):
     ```bash
-    python langnews_agent_main.py
+    python langnews_summarizer.py
+    ```
+Autonomous Agent that chooses necessary tools to reach news-scraping goal:
+    ```bash
+    python langnews_agent_topic_summarizer.py
     ```
