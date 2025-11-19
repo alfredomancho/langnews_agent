@@ -12,12 +12,15 @@ The codebase demonstrates:
 - Automatic selection of tools and makes all critical decisions until specified goal is met
 
 ## Structure
+- **agents/summarize_agent.py:**: LangChain agent logic for summarizing headlines
+- **agents/agent_executor.py:**: Creates and returns a modern LangGraph-based ReAct agent
+- **agents/llm/ollama_llm_agent.py:**: Use mistral:7b LLM model via Ollama
 - **config/settings.py:**: Centralized configuration (API endpoints and keys)
 - **prompts/summary_prompt.py:**: Contains prompt templates for summarization
-- **tools/news_scraper.py:**: Scripts for fetching news headlines from the NewsData.io API
-- **agents/summarize_agent.py:**: LangChain agent logic for summarizing headlines
-- **agents/llm/ollama_llm_agent.py:**: Use mistral:7b LLM model via Ollama
-- **langnews_agent_main.py:**: Run the full agent (CLI entry point)
+- **tools/fetch_top_headlines.py:**: Script for fetching news headlines from the NewsData.io API
+- **tools/summarize_headlines.py:**: Script for summarizing news headlines 
+- **langnews_summarizer.py:**: Run the news topic summarizer (linear code)
+- **langnews_agent_topic_summarizer.py:**: Run the autonomous news scraper summarizing agent 
 
 - **requirements.txt**: List of required packages and dependencies.
 
@@ -39,11 +42,12 @@ Get a NewsData.io API key (free registration).
     export NEWSDATA_API_KEY='your_api_key_here'
     ```
 
-3. **Run Agent**  
+3a. **Run News Summarizer**  
 News summarizer using LangChain (linear code, no decision making):
     ```bash
     python langnews_summarizer.py
     ```
+3b. **Run Autonomous News Scraper Agent**  
 Autonomous Agent that chooses necessary tools to reach news-scraping goal:
     ```bash
     python langnews_agent_topic_summarizer.py

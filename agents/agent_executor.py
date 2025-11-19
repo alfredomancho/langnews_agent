@@ -1,7 +1,7 @@
 from langgraph.prebuilt import create_react_agent  # v1.0.3 modern react agent
 from langchain_ollama import ChatOllama
-from tools.news_search import search_news
-from tools.summarizer import summarize_headlines
+from tools.search_news import search_news
+from tools.summarize_headlines import summarize_headlines
 
 
 def make_agent():

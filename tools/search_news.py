@@ -1,5 +1,5 @@
 from langchain.tools import tool
-from tools.news_scraper import fetch_top_headlines
+from tools.fetch_top_headlines import fetch_top_headlines
 
 @tool("search_news")
 def search_news(query: str, limit: int=50, country: str="ca,us", language: str="en", category: str="technology"):
