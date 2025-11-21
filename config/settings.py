@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 NEWSDATA_API_KEY = os.getenv("NEWS_API_KEY")
-NEWSDATA_API_URL = "https://newsdata.io/api/1/latest"  
+NEWSDATA_API_LATEST_URL = "https://newsdata.io/api/1/latest"  
+NEWSDATA_API_ARCHIVE_URL = "https://newsdata.io/api/1/archive"  
 NEWS_TOPICS = "technology,business,health,science,world"
 NEWS_COUNTRY = "ca,us,th"
 NEWS_LANGUAGE = "en,th"

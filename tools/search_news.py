@@ -2,8 +2,8 @@ from langchain.tools import tool
 from tools.fetch_top_headlines import fetch_top_headlines
 
 @tool("search_news")
-def search_news(query: str, limit: int=50, country: str="ca,us", language: str="en", category: str="technology"):
-    """Search for recent news headlines containing the given query.
+def search_news(query: str, limit: int=50, country: str="ca,us", language: str="en", category: str="top"):
+    """Searches for the latest news headlines containing the given query. Always use this tool to search for news headlines and never do it in-model."
     
     Args:
         query: The keyword to search for (e.g., "iPhone")
@@ -13,9 +13,10 @@ def search_news(query: str, limit: int=50, country: str="ca,us", language: str="
         category: News category (e.g., "technology")
 
     Returns:
-        List of headline strings that contain the query.
+        List of news headline strings that contain the query.
     """
-    headlines = fetch_top_headlines(limit=limit, country=country, language=language, category=category)
+    headlines = fetch_top_headlines(query=query, limit=limit, country=country, language=language, category=category)
+#    headlines = "null"
     print("Called tool search_news")
     print(f"limit is {limit}")
     print(f"query is {query}")

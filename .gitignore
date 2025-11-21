@@ -12,5 +12,6 @@ venv/
 *.swp
 *_current
 *.txt
+save_output_autonomous.sh
 .env
 !requirements.txt

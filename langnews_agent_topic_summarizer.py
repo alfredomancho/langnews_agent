@@ -7,9 +7,8 @@ if __name__ == "__main__":
     agent_app = make_agent()  # returns langgraph app
 
     query = (
-        "Find at least 22 different news headlines about the iPhone, "
-        "then summarize each headline into one numbered bullet point and state the source."
-        "Use the search and summarize tools as needed."
+        "Search for at least 8 unique news headlines about the iPhone 16, extend and summarize each headline. Use the search_news tool with appropriate arguments and other available tools as necessary to achieve the goal. "
+        "Output each search result as a single numbered bullet point indicating the source and date of the headline. DO NOT output anything else."
     )
 
     result = agent_app.invoke({

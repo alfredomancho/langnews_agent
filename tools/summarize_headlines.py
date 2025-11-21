@@ -5,13 +5,13 @@ from agents.llm.ollama_llm_agent import OllamaAgentRunnable
 
 @tool
 def summarize_headlines(headlines: list) -> str:
-    """Take a list of news headlines and summarize each of them into concise bullet points.
+    """Takes a list of news headlines and summarizes each of them into concise bullet points. Always use this tool to summarize headlines and never do it in-model.
 
     Args:
         headlines: List of strings (news headlines)
 
     Returns:
-        A string with bullet points summarizing the key news.
+        A list with bullet points that summarizes each news headline.
     """
     llm = OllamaAgentRunnable()
     chain = SUMMARY_PROMPT | llm | StrOutputParser()
