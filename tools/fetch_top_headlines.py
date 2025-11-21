@@ -1,14 +1,17 @@
 import requests
 from config.settings import NEWSDATA_API_KEY, NEWSDATA_API_ARCHIVE_URL, NEWSDATA_API_LATEST_URL
 
-def fetch_top_headlines(query: str="iphone 14", limit: int=50, country: str="ca,us", language: str="en", category: str="top,technology"):
+def fetch_top_headlines(query: str="", limit: int=50, country: str="ca,us", language: str="en", category: str="top,technology"):
     
     # build query url
     # archive
 #    url = NEWSDATA_API_ARCHIVE_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + country + "&language=" + language + "&category=" + category + "&qInTitle=" + query + "&from_date=2025-06-01" # + "&full_content=1"
 
     # latest
-    url = NEWSDATA_API_LATEST_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + country + "&language=" + language + "&category=" + category + "&qInTitle=" + query # + "&full_content=1"
+    if query:
+        url = NEWSDATA_API_LATEST_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + country + "&language=" + language + "&category=" + category + "&qInTitle=" + query # + "&full_content=1"
+    else:
+        url = NEWSDATA_API_LATEST_URL + "?" + "apikey=" + NEWSDATA_API_KEY + "&country=" + country + "&language=" + language + "&category=" + category # + "&full_content=1"
 
 
     print(f"Query URL is: {url}")
